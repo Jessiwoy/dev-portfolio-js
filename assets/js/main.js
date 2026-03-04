@@ -1,7 +1,10 @@
 "use strict";
 
 (function () {
-  // Header mobile menu
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+  // Menu mobile
   const header = document.querySelector(".header");
   const toggle = document.querySelector(".nav-toggle");
   const nav = document.getElementById("primary-nav");

@@ -534,3 +534,56 @@ a:hover {
   gap: 12px;
   flex-wrap: wrap;
 }
+
+/* Footer */
+.footer {
+  border-top: 1px solid var(--border);
+  padding: var(--space-5) 0;
+}
+
+.footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.footer__copy {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer__link {
+  color: var(--muted);
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  transition: background var(--t-fast), color var(--t-fast), border-color var(--t-fast);
+}
+
+.footer__link:hover,
+.footer__link:focus-visible {
+  color: var(--text);
+  background: var(--surface);
+  border-color: var(--border);
+  outline: none;
+  text-decoration: none;
+}
+
+.footer__sep {
+  color: rgba(255, 255, 255, 0.22);
+}
+
+.footer__built {
+  color: rgba(255, 255, 255, 0.50);
+  font-size: 0.9rem;
+}
