@@ -723,3 +723,24 @@ button:focus-visible {
   transform: translateY(0);
   pointer-events: auto;
 }
+
+/* RESPONSIVIDADE (mobile-first)*/
+
+img, svg, video {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+}
