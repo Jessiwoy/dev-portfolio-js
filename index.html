@@ -1,26 +1,45 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Portfólio | Jessica Woytuski</title>
-    <meta name="description" content="Portfólio pessoal com projetos, habilidades e contato." />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Favicon (add depois em /assets/img) -->
-    <link rel="icon" href="assets/img/favicon.ico" />
-    <link rel="stylesheet" href="assets/css/reset.css" />
-    <link rel="stylesheet" href="assets/css/styles.css" />
-  </head>
+  <title>Portfólio | Jessica Woytuski</title>
+  <meta name="description" content="Portfólio pessoal com projetos, habilidades e contato." />
 
-  <body>
-    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+  <!-- Favicon (add depois em /assets/img) -->
+  <link rel="icon" href="assets/img/favicon.ico" />
+  <link rel="stylesheet" href="assets/css/reset.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
 
-    <header class="header" id="topo">
-      <!-- add Header -->
-    </header>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
-   <main id="conteudo">
+  <header class="header" id="topo">
+    <div class="container header__inner">
+      <a class="brand" href="#topo" aria-label="Voltar ao topo">
+        <span class="brand__mark" aria-hidden="true">◆</span>
+        <span class="brand__text">Jessica Woytuski</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-controls="primary-nav" aria-expanded="false">
+        <span class="sr-only">Abrir menu</span>
+        <span aria-hidden="true">Menu</span>
+      </button>
+
+      <nav class="nav" id="primary-nav" aria-label="Navegação principal">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#sobre">Sobre</a></li>
+          <li><a class="nav__link" href="#projetos">Projetos</a></li>
+          <li><a class="nav__link" href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
     <section class="section">
       <div class="container">
         <header class="section__header">
@@ -42,12 +61,13 @@
         </div>
       </div>
     </section>
-</main>
+  </main>
 
-    <footer class="footer">
-      <!-- add Footer -->
-    </footer>
+  <footer class="footer">
+    <!-- add Footer -->
+  </footer>
 
-    <script src="assets/js/main.js" defer></script>
-  </body>
+  <script src="assets/js/main.js" defer></script>
+</body>
+
 </html>
