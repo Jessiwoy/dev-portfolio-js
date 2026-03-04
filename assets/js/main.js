@@ -1,8 +1,7 @@
 "use strict";
 
-(function () {
-  const yearEl = document.getElementById("year");
-  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+document.addEventListener("DOMContentLoaded", () => {
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   // Menu mobile
   const header = document.querySelector(".header");
@@ -26,24 +25,42 @@
     });
   }
 
-  // Back to top 
-  const backToTop = document.querySelector(".back-to-top");
+  const revealEls = document.querySelectorAll(".reveal, [data-reveal]");
 
-  if (backToTop) {
-    const toggleBackToTop = () => {
-      const shouldShow = window.scrollY > 500;
-      backToTop.classList.toggle("is-visible", shouldShow);
-    };
+  if (!prefersReducedMotion && revealEls.length) {
+    const io = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target); 
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -10% 0px" }
+    );
 
-    toggleBackToTop();
-    window.addEventListener("scroll", toggleBackToTop, { passive: true });
-
-    // Scroll para o topo ao clicar
-    backToTop.addEventListener("click", (e) => {
-      e.preventDefault();
-      console.log("Back to top clicado");
-      window.scrollTo({ top: 0, behavior: "smooth" });
+    revealEls.forEach((el, index) => {
+      el.style.setProperty("--delay", `${Math.min(index * 60, 240)}ms`);
+      el.setAttribute("data-delay", "true");
+      io.observe(el);
     });
+  } else {
+    revealEls.forEach((el) => el.classList.add("is-visible"));
   }
 
-})();
+  const backToTopBtn = document.querySelector(".back-to-top");
+
+  const toggleBackToTop = () => {
+    if (!backToTopBtn) return;
+    backToTopBtn.classList.toggle("is-visible", window.scrollY > 500);
+  };
+
+  toggleBackToTop();
+  window.addEventListener("scroll", toggleBackToTop, { passive: true });
+
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
+    });
+  }
+});
