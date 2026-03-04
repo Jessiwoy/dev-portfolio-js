@@ -468,6 +468,24 @@ a:hover {
 }
 
 .project-card {
+  overflow: hidden;
+}
+
+.project-card__image {
+  aspect-ratio: 16 / 9;
+  background: rgba(255,255,255,0.03);
+  border-bottom: 1px solid var(--border);
+}
+
+.project-card__placeholder {
+  height: 100%;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.project-card__content {
   padding: 24px;
 }
 
