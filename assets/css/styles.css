@@ -725,7 +725,6 @@ button:focus-visible {
 }
 
 /* RESPONSIVIDADE (mobile-first)*/
-
 img, svg, video {
   max-width: 100%;
   height: auto;
@@ -742,5 +741,32 @@ img, svg, video {
   .section {
     padding-top: 56px;
     padding-bottom: 56px;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid--2 {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__inner {
+    gap: 24px; 
+  }
+
+  .hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
   }
 }
