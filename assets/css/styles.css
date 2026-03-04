@@ -471,6 +471,12 @@ a:hover {
   }
 }
 
+@media (min-width: 1100px) {
+  .projects {
+    grid-template-columns: repeat(4, minmax(220px, 1fr));
+  }
+}
+
 .project-card {
   overflow: hidden;
 }
@@ -512,6 +518,16 @@ a:hover {
 .project-card__links {
   display: flex;
   gap: 10px;
+}
+
+@media (max-width: 480px) {
+  .project-card__links {
+    flex-direction: column;
+  }
+
+  .project-card__links .btn {
+    width: 100%;
+  }
 }
 
 /* Contact */
