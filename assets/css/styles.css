@@ -38,6 +38,10 @@
   --t-med: 240ms ease;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font);
   background: var(--bg);
@@ -586,4 +590,40 @@ a:hover {
 .footer__built {
   color: rgba(255, 255, 255, 0.50);
   font-size: 0.9rem;
+}
+
+/* Back to top */
+.back-to-top {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(11, 15, 20, 0.7);
+  backdrop-filter: blur(10px);
+
+  color: var(--text);
+  text-decoration: none;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity var(--t-med), transform var(--t-med), background var(--t-fast);
+}
+
+.back-to-top:hover,
+.back-to-top:focus-visible {
+  background: rgba(255, 255, 255, 0.10);
+  outline: none;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }

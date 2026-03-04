@@ -25,4 +25,25 @@
       }
     });
   }
+
+  // Back to top 
+  const backToTop = document.querySelector(".back-to-top");
+
+  if (backToTop) {
+    const toggleBackToTop = () => {
+      const shouldShow = window.scrollY > 500;
+      backToTop.classList.toggle("is-visible", shouldShow);
+    };
+
+    toggleBackToTop();
+    window.addEventListener("scroll", toggleBackToTop, { passive: true });
+
+    // Scroll para o topo ao clicar
+    backToTop.addEventListener("click", (e) => {
+      e.preventDefault();
+      console.log("Back to top clicado");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
 })();
