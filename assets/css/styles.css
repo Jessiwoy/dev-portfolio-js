@@ -1,0 +1,86 @@
+:root {
+  /* Cores base */
+  --bg: #0b0f14;
+  --surface: rgba(255, 255, 255, 0.06);
+  --surface-2: rgba(255, 255, 255, 0.09);
+  --border: rgba(255, 255, 255, 0.10);
+
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.68);
+
+  /* Aurora monocromática */
+  --aurora-1: rgba(255, 255, 255, 0.08);
+  --aurora-2: rgba(255, 255, 255, 0.05);
+
+  /* Layout */
+  --container: 1120px;
+  --px: 24px;
+
+  /* Tipografia */
+  --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji",
+    "Segoe UI Emoji";
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  width: min(var(--container), 100% - (var(--px) * 2));
+  margin-inline: auto;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--border);
+}
+.skip-link:focus {
+  left: 12px;
+}
+
+/* Helpers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Aura/aurora de fundo (add depois na Hero) */
+.aurora {
+  position: relative;
+}
+.aurora::before,
+.aurora::after {
+  content: "";
+  position: absolute;
+  inset: -120px;
+  pointer-events: none;
+  filter: blur(60px);
+  opacity: 0.9;
+}
+.aurora::before {
+  background: radial-gradient(circle at 20% 20%, var(--aurora-1), transparent 45%);
+}
+.aurora::after {
+  background: radial-gradient(circle at 70% 30%, var(--aurora-2), transparent 50%);
+}
+
+/* Placeholder temporário */
+.header,
+.footer {
+  border-top: 1px solid transparent;
+}
