@@ -36,6 +36,13 @@
   /* Transições */
   --t-fast: 150ms ease;
   --t-med: 240ms ease;
+
+   /* Motion */
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+  --dur-fast: 120ms;
+  --dur: 220ms;
+  --dur-slow: 420ms;
+  --reveal-distance: 12px;
 }
 
 html {
@@ -203,7 +210,7 @@ a:hover {
   width: 1px;
   height: 1px;
   padding: 0;
-  margin: -1px;
+  margin: 0;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
@@ -663,27 +670,10 @@ a:hover {
   outline: none;
 }
 
-.back-to-top.is-visible {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-}
-
 /* MOTION */
-:root {
-  --ease-out: cubic-bezier(.16, 1, .3, 1);
-  --dur-fast: 120ms;
-  --dur: 220ms;
-  --dur-slow: 420ms;
-  --reveal-distance: 12px;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  html::before { animation: none; }
 
   *, *::before, *::after {
     animation-duration: 1ms !important;
@@ -698,7 +688,6 @@ a, button {
     background-color var(--dur) var(--ease-out),
     border-color var(--dur) var(--ease-out),
     color var(--dur) var(--ease-out),
-    box-shadow var(--dur) var(--ease-out),
     opacity var(--dur) var(--ease-out);
 }
 
@@ -753,24 +742,7 @@ button:focus-visible {
   transition-delay: var(--delay, 0ms);
 }
 
-.back-to-top {
-  opacity: 0;
-  transform: translateY(8px);
-  pointer-events: none;
-}
-
-.back-to-top.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
 /* RESPONSIVIDADE (mobile-first)*/
-img, svg, video {
-  max-width: 100%;
-  height: auto;
-}
-
 @media (max-width: 480px) {
   .container {
     padding-left: 16px;
