@@ -789,3 +789,22 @@ img, svg, video {
     gap: 8px;
   }
 }
+
+@media (max-width: 480px) {
+  .contact {
+    padding: 24px;
+  }
+
+  .contact__actions .btn {
+    width: 100%;
+  }
+
+  .footer__inner {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer__nav {
+    justify-content: center;
+  }
+}
