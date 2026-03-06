@@ -3,6 +3,11 @@
 document.addEventListener("DOMContentLoaded", () => {
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+const yearEl = document.getElementById("year");
+  if (yearEl) {
+    yearEl.textContent = String(new Date().getFullYear());
+  }
+
   // Menu mobile
   const header = document.querySelector(".header");
   const toggle = document.querySelector(".nav-toggle");
@@ -14,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
       toggle.setAttribute("aria-expanded", String(isOpen));
     });
 
-    // Fecha menu quando clica em um link (mobile UX)
     nav.addEventListener("click", (e) => {
       const target = e.target;
       if (!(target instanceof HTMLElement)) return;
