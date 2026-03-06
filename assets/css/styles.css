@@ -164,6 +164,7 @@ html::before {
   }
 }
 
+/* Icons */
 .icon {
   width: 18px;
   height: 18px;
@@ -177,6 +178,34 @@ html::before {
   stroke-width: 1.8;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.icon--stroke {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icon-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn .icon,
+.footer__link .icon,
+.nav__link .icon {
+  width: 20px;
+  height: 20px;
 }
 
 /* Card surface */
@@ -210,6 +239,10 @@ html::before {
 
 .btn:active {
   transform: translateY(1px);
+}
+
+.btn--icon {
+  padding: 12px;
 }
 
 /* Links */
@@ -634,8 +667,11 @@ a:hover {
 }
 
 .footer__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: var(--muted);
-  padding: 8px 10px;
+  padding: 9px;
   border-radius: 12px;
   border: 1px solid transparent;
   transition: background var(--t-fast), color var(--t-fast), border-color var(--t-fast);
