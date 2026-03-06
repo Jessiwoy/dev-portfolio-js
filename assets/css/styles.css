@@ -126,14 +126,6 @@ html::before {
   max-width: 72ch;
 }
 
-.section__kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
 .section__title {
   margin: 10px 0 0;
   font-size: clamp(1.6rem, 2.2vw + 1rem, 2.4rem);
